@@ -1,12 +1,16 @@
 const express = require ('express')
 const { Client } = require('pg');
-const PORT = process.env.PORT || 5000
+const authRouter = require('./authRouter')
+const PORT = process.env.PG_PORT || 5000
 
 const app = express()
 
+app.use(express.json())
+app.use("/auth", authRouter)
+
 const start = async () => {
     const client = new Client({
-        connectionString: 'postgresql://postgres:1oa9x7@localhost:5432/postgres'
+        connectionString: process.env.PG_CONNECTION_STRING
     });
 
     try {
