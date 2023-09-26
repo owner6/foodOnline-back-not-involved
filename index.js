@@ -1,7 +1,8 @@
 const express = require ('express')
 const { Client } = require('pg');
 const authRouter = require('./authRouter')
-const PORT = process.env.PG_PORT || 5000
+const PORT = process.env.PG_PORT || 3000
+
 
 const app = express()
 
