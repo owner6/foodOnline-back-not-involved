@@ -1,4 +1,4 @@
-const db = require('./db/models');
+const db = require('./DB/models');
 class authController {
     async registration(req, res) {
         try {
