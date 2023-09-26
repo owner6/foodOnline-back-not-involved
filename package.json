@@ -19,10 +19,10 @@
     "pg-hstore": "^2.3.4",
     "reflect-metadata": "^0.1.13",
     "sequelize": "^6.33.0",
-    "sequelize-cli": "^6.6.1",
     "typeorm": "^0.3.17"
   },
   "devDependencies": {
-    "@types/node": "^20.6.2"
+    "@types/node": "^20.6.2",
+    "sequelize-cli": "^6.6.1"
   }
 }
