@@ -1,20 +1,20 @@
-const User = require('./models/User')
-const Role = require('./models/Role')
-const bCrypt = require('bcryptjs')
-
+const db = require('./db/models');
 class authController {
     async registration(req, res) {
         try {
-            const { username, password } = req.body;
-            const candidate = await User.findOne({ where: { username } });
+            const { firstname, lastname, email, password, phone } = req.body;
+            const candidate = await db.User.findOne({ where: { email } });
     
             if (candidate) {
                 return res.status(500).json({ message: 'A user with the same username already exists' });
             }
     
-            const newUser = await User.create({
-                username,
+            const newUser = await db.User.create({
+                email,
                 password, 
+                firstname,
+                lastname,
+                phone
             });
     
             return res.json({ message: 'User successfully registered' });

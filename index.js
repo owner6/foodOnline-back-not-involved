@@ -1,6 +1,6 @@
 const express = require ('express')
 const authRouter = require('./authRouter')
-const PORT = process.env.DB_PORT || 3000
+const PORT = process.env.SERVER_PORT || 3000
 
 
 const app = express()
